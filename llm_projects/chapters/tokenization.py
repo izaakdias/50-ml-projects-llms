@@ -130,10 +130,10 @@ def p05(ctx: Context) -> None:
 
 def p06(ctx: Context) -> None:
     samples = {
-        "Português": "modelos de linguagem aprendem padrões úteis",
+        "Portuguese": "modelos de linguagem aprendem padrões úteis",
         "English": "language models learn useful patterns",
-        "Español": "los modelos de lenguaje aprenden patrones útiles",
-        "Français": "les modèles de langue apprennent des motifs utiles",
+        "Spanish": "los modelos de lenguaje aprenden patrones útiles",
+        "French": "les modèles de langue apprennent des motifs utiles",
         "Deutsch": "Sprachmodelle lernen nützliche Muster",
     }
     bpe = CharBPE(merges=80).fit(list(samples.values()))
