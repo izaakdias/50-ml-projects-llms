@@ -299,6 +299,6 @@ def bundle(ctx: Context) -> dict[str, Any]:
 
 def print_result(project: int, title: str, paths: list[Path] | None = None) -> None:
     saved = ", ".join(str(path) for path in (paths or []))
-    print(f"Projeto {project:02d} — {title}")
+    print(f"Project {project:02d} — {title}")
     if saved:
-        print(f"Arquivos: {saved}")
+        print(f"Files: {saved}")
