@@ -1,62 +1,62 @@
-# Índice dos projetos
+# Project index
 
-Todos os comandos abaixo rodam em modo offline. Para os projetos 24–50, acrescente `--model distilgpt2` para analisar um checkpoint real (após instalar `requirements-models.txt`). O modo `toy` é uma demonstração didática com pesos aleatórios.
+All commands run offline by default. For analyses that inspect a pretrained transformer's internals (covered mainly by Projects 24–50), add `--model distilgpt2` after installing `requirements-models.txt`. The default `toy` mode is an educational demonstration with randomly initialized weights, not a pretrained model.
 
-| Nº | Tema | Módulo |
+| No. | Topic | Module |
 |---:|---|---|
-| 01 | Três esquemas de tokenização | `llm_projects/chapters/tokenization.py` |
-| 02 | Comprimento de textos em caracteres, palavras e tokens | `llm_projects/chapters/tokenization.py` |
-| 03 | Tabelas de frequência do comprimento de tokens | `llm_projects/chapters/tokenization.py` |
-| 04 | Comprimento de tokens em caracteres e bytes | `llm_projects/chapters/tokenization.py` |
-| 05 | Tokenização como compressão | `llm_projects/chapters/tokenization.py` |
-| 06 | Tokenização e compressão entre idiomas | `llm_projects/chapters/tokenization.py` |
-| 07 | Tradução e alinhamento entre tokenizadores | `llm_projects/chapters/tokenization.py` |
-| 08 | Distribuição de similaridades cosseno | `llm_projects/chapters/embeddings.py` |
-| 09 | Similaridade cosseno entre tokens sequenciais | `llm_projects/chapters/embeddings.py` |
-| 10 | Similaridade cosseno de números sequenciais | `llm_projects/chapters/embeddings.py` |
-| 11 | Rede de similaridades cosseno | `llm_projects/chapters/embeddings.py` |
-| 12 | RSA entre duas representações vetoriais | `llm_projects/chapters/embeddings.py` |
-| 13 | Similaridade por distância e cosseno | `llm_projects/chapters/embeddings.py` |
-| 14 | Eixos semânticos lineares | `llm_projects/chapters/embeddings.py` |
-| 15 | Vetores de analogia | `llm_projects/chapters/embeddings.py` |
-| 16 | Distribuições de probabilidade softmax | `llm_projects/chapters/logits.py` |
-| 17 | Seleção probabilística de tokens | `llm_projects/chapters/logits.py` |
-| 18 | Acurácia de previsão do próximo token | `llm_projects/chapters/logits.py` |
-| 19 | Perda de linguagem por entropia cruzada | `llm_projects/chapters/logits.py` |
-| 20 | Perplexidade de modelos n-gram | `llm_projects/chapters/logits.py` |
-| 21 | Regressão para prever posição de token | `llm_projects/chapters/logits.py` |
-| 22 | Ranking de continuações em um benchmark local | `llm_projects/chapters/logits.py` |
-| 23 | Auditoria de viés em prompts controlados | `llm_projects/chapters/logits.py` |
-| 24 | Similaridades cosseno entre camadas | `llm_projects/chapters/transformer.py` |
-| 25 | Seletividade de categorias por cosseno | `llm_projects/chapters/transformer.py` |
-| 26 | Estado da camada anterior mais seu ajuste | `llm_projects/chapters/transformer.py` |
-| 27 | Sensibilidade a ruído e escala por camada | `llm_projects/chapters/transformer.py` |
-| 28 | Dimensionalidade efetiva dos estados ocultos | `llm_projects/chapters/transformer.py` |
-| 29 | Redução dimensional de estados ocultos | `llm_projects/chapters/transformer.py` |
-| 30 | Classificação de sentimento com árvore de decisão | `llm_projects/chapters/transformer.py` |
-| 31 | Logit lens entre camadas | `llm_projects/chapters/transformer.py` |
-| 32 | Patching de estado oculto em prompts contrastivos de IOI | `llm_projects/chapters/transformer.py` |
-| 33 | Características dos pesos QKV | `llm_projects/chapters/attention.py` |
-| 34 | Características das ativações QKV | `llm_projects/chapters/attention.py` |
-| 35 | Scores de atenção brutos e após softmax | `llm_projects/chapters/attention.py` |
-| 36 | Magnitude dos ajustes de atenção | `llm_projects/chapters/attention.py` |
-| 37 | Mudança de previsão e divergência KL por cabeça | `llm_projects/chapters/attention.py` |
-| 38 | RSA por camada e seletividade de categoria | `llm_projects/chapters/attention.py` |
-| 39 | Frequência de token, QK e ajustes de atenção | `llm_projects/chapters/attention.py` |
-| 40 | Efeito de silenciar cabeças de atenção | `llm_projects/chapters/attention.py` |
-| 41 | Patching de cabeças de atenção em prompts contrastivos de IOI | `llm_projects/chapters/attention.py` |
-| 42 | Características de pesos e ativações MLP | `llm_projects/chapters/mlp.py` |
-| 43 | Etapas das projeções MLP | `llm_projects/chapters/mlp.py` |
-| 44 | Sondagem de substantivos e verbos nas projeções MLP | `llm_projects/chapters/mlp.py` |
-| 45 | Distâncias de Minkowski e informação mútua | `llm_projects/chapters/mlp.py` |
-| 46 | Lesão de neurônios guiada por estatística | `llm_projects/chapters/mlp.py` |
-| 47 | Sondagem supervisionada com árvores impulsionadas | `llm_projects/chapters/mlp.py` |
-| 48 | Classificação de “can” e “cannot” com regressão logística | `llm_projects/chapters/mlp.py` |
-| 49 | Substituição progressiva por medianas nas ativações MLP | `llm_projects/chapters/mlp.py` |
-| 50 | Recomendação usando projeções MLP | `llm_projects/chapters/mlp.py` |
+| 01 | Three tokenization schemes | `llm_projects/chapters/tokenization.py` |
+| 02 | Text length in characters, words, and tokens | `llm_projects/chapters/tokenization.py` |
+| 03 | Token-length frequency tables | `llm_projects/chapters/tokenization.py` |
+| 04 | Token length in characters and bytes | `llm_projects/chapters/tokenization.py` |
+| 05 | Tokenization as compression | `llm_projects/chapters/tokenization.py` |
+| 06 | Tokenization and compression across languages | `llm_projects/chapters/tokenization.py` |
+| 07 | Translation and alignment across tokenizers | `llm_projects/chapters/tokenization.py` |
+| 08 | Distribution of cosine similarities | `llm_projects/chapters/embeddings.py` |
+| 09 | Cosine similarity between sequential tokens | `llm_projects/chapters/embeddings.py` |
+| 10 | Cosine similarity of sequential numbers | `llm_projects/chapters/embeddings.py` |
+| 11 | Cosine-similarity network | `llm_projects/chapters/embeddings.py` |
+| 12 | RSA between two vector representations | `llm_projects/chapters/embeddings.py` |
+| 13 | Distance-based and cosine similarity | `llm_projects/chapters/embeddings.py` |
+| 14 | Linear semantic axes | `llm_projects/chapters/embeddings.py` |
+| 15 | Analogy vectors | `llm_projects/chapters/embeddings.py` |
+| 16 | Softmax probability distributions | `llm_projects/chapters/logits.py` |
+| 17 | Probabilistic token selection | `llm_projects/chapters/logits.py` |
+| 18 | Next-token prediction accuracy | `llm_projects/chapters/logits.py` |
+| 19 | Language-model cross-entropy loss | `llm_projects/chapters/logits.py` |
+| 20 | N-gram language-model perplexity | `llm_projects/chapters/logits.py` |
+| 21 | Regression to predict token position | `llm_projects/chapters/logits.py` |
+| 22 | Continuation ranking on a local benchmark | `llm_projects/chapters/logits.py` |
+| 23 | Bias audit on controlled prompts | `llm_projects/chapters/logits.py` |
+| 24 | Cosine similarities across layers | `llm_projects/chapters/transformer.py` |
+| 25 | Category selectivity using cosine similarity | `llm_projects/chapters/transformer.py` |
+| 26 | Previous-layer state plus its update | `llm_projects/chapters/transformer.py` |
+| 27 | Noise and scale sensitivity across layers | `llm_projects/chapters/transformer.py` |
+| 28 | Effective dimensionality of hidden states | `llm_projects/chapters/transformer.py` |
+| 29 | Dimensionality reduction of hidden states | `llm_projects/chapters/transformer.py` |
+| 30 | Sentiment classification with a decision tree | `llm_projects/chapters/transformer.py` |
+| 31 | Logit lens across layers | `llm_projects/chapters/transformer.py` |
+| 32 | Hidden-state patching on contrastive IOI prompts | `llm_projects/chapters/transformer.py` |
+| 33 | Properties of QKV weights | `llm_projects/chapters/attention.py` |
+| 34 | Properties of QKV activations | `llm_projects/chapters/attention.py` |
+| 35 | Raw and softmax attention scores | `llm_projects/chapters/attention.py` |
+| 36 | Magnitude of attention updates | `llm_projects/chapters/attention.py` |
+| 37 | Per-head prediction changes and KL divergence | `llm_projects/chapters/attention.py` |
+| 38 | Layer-wise RSA and category selectivity | `llm_projects/chapters/attention.py` |
+| 39 | Token frequency, QK scores, and attention updates | `llm_projects/chapters/attention.py` |
+| 40 | Effect of ablating attention heads | `llm_projects/chapters/attention.py` |
+| 41 | Attention-head patching on contrastive IOI prompts | `llm_projects/chapters/attention.py` |
+| 42 | MLP weights and activations | `llm_projects/chapters/mlp.py` |
+| 43 | Stages of MLP projections | `llm_projects/chapters/mlp.py` |
+| 44 | Probing for nouns and verbs in MLP projections | `llm_projects/chapters/mlp.py` |
+| 45 | Minkowski distances and mutual information | `llm_projects/chapters/mlp.py` |
+| 46 | Statistics-guided neuron ablation | `llm_projects/chapters/mlp.py` |
+| 47 | Supervised probing with boosted trees | `llm_projects/chapters/mlp.py` |
+| 48 | Logistic regression to classify “can” and “cannot” | `llm_projects/chapters/mlp.py` |
+| 49 | Progressive median replacement in MLP activations | `llm_projects/chapters/mlp.py` |
+| 50 | Recommendations using MLP projections | `llm_projects/chapters/mlp.py` |
 
-Para executar, por exemplo:
+For example, run Project 35 in offline mode and save its outputs to a dedicated directory:
 
 ```bash
-python -m llm_projects 35 --output results/projeto-35
+python -m llm_projects 35 --output results/project-35
 ```
