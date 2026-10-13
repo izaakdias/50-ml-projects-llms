@@ -12,7 +12,7 @@ def load_gpt2_bundle(model_name: str) -> dict:
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
     except ImportError as exc:
-        raise RuntimeError("Para usar --model distilgpt2, instale requirements-models.txt") from exc
+        raise RuntimeError("Install requirements-models.txt to use --model distilgpt2") from exc
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     if tokenizer.pad_token is None:
