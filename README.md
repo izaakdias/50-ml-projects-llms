@@ -1,12 +1,16 @@
-# 50 projetos originais para entender LLMs
+# 50 ML Projects to Understand LLMs — Independent Python Implementations
 
-Implementações novas em Python, feitas do zero a partir dos temas e objetivos do livro *50 ML Projects to Understand LLMs*, de Mike X Cohen. Este repositório **não contém notebooks nem soluções copiadas do autor**. O código, os exemplos e o pequeno corpus foram escritos para este projeto.
+A collection of 50 runnable Python experiments inspired by the topics in Mike X. Cohen's book [*50 ML Projects to Understand LLMs*](https://www.packtpub.com/en-ca/product/50-ml-projects-to-understand-llms-9781808082559).
 
-O objetivo é transformar cada tema em um experimento que rode, gere dados e deixe um resultado examinável. O índice completo está em [PROJECTS.md](PROJECTS.md).
+This is an independent study companion, not an official solution set. The code, examples, small corpus, and visualizations in this repository are original implementations; they are not copied from the book. See the full [project index](PROJECTS.md).
 
-## Começar
+## What you'll explore
 
-Python 3.12 é a versão verificada neste repositório. O modo offline usa Python 3.10 ou superior; o modo de checkpoint também depende da versão de PyTorch compatível com seu Python.
+The experiments cover tokenization, embeddings, output logits, transformer representations, attention, and MLPs. Each project can be run on its own and writes inspectable outputs such as CSV files, JSON files, and plots.
+
+## Quick start
+
+Python 3.12 is the version verified for this repository. The offline mode supports Python 3.10 or newer.
 
 ```bash
 python -m venv .venv
@@ -15,31 +19,33 @@ python -m pip install -r requirements.txt
 python -m llm_projects 1
 ```
 
-O comando salva CSVs, JSONs e gráficos na pasta `results/`. Escolha outra pasta com `--output` e altere a semente com `--seed`:
+Run one project, set a reproducible seed, or run all 50 in the default offline mode:
 
 ```bash
-python -m llm_projects 14 --output resultados/projeto-14 --seed 7
-python -m llm_projects all --output resultados/todos
+python -m llm_projects 14 --output results/project-14 --seed 7
+python -m llm_projects all --output results/all
 ```
 
-Cada projeto também tem um número e uma função próprios em `llm_projects/chapters/`. É possível rodar um só sem executar os demais.
+Results are written to `results/` by default. Use `--output` to choose another directory. Project implementations are organized by topic in `llm_projects/chapters/`.
 
-## Modos de execução
+## Model modes
 
-- **Padrão (`--model toy`)**: roda offline, com corpus curto criado para este repositório, algoritmos clássicos e um decoder causal pequeno, implementado neste projeto e inicializado aleatoriamente. Esse modo demonstra como calcular e visualizar as medidas; ele **não representa resultados empíricos de GPT-2, BERT ou outro modelo treinado**.
-- **Checkpoint real (`--model distilgpt2`)**: usa pesos públicos de um modelo GPT-2 compatível para os projetos que analisam estados ocultos, atenção e MLP. Instale primeiro as dependências opcionais; a primeira execução baixa os pesos e pode ser mais lenta em CPU.
+- **Offline toy mode (`--model toy`)** is the default. It uses local example data, classical ML methods, and a small causal decoder initialized with random weights. It is designed to demonstrate calculations and visualizations; it does **not** report empirical results from a pretrained GPT-2, BERT, or other trained language model.
+- **Pretrained checkpoint mode (`--model distilgpt2`)** uses public DistilGPT-2 weights for analyses that inspect transformer internals, such as hidden states, attention, and MLP activations. The first run downloads the checkpoint and may be slow on CPU.
+
+Install the optional model dependencies before using the checkpoint mode:
 
 ```bash
 python -m pip install -r requirements-models.txt
 python -m llm_projects 35 --model distilgpt2
 ```
 
-Os projetos de tokenização, embeddings simples e regressão continuam usando os dados locais. O modo de checkpoint se aplica aos projetos que leem os estados internos do decoder. O notebook/relatório deve indicar qual modo gerou cada figura. Os projetos 22 e 23 continuam sendo exemplos locais: o 22 não baixa o conjunto HellaSwag e o 23 não mede viés de um modelo treinado. Intervenções em cabeças e estados usam medidas de patch/ablação aproximadas, descritas nos próprios CSVs e gráficos.
+Tokenization, simple embedding, and regression examples continue to use local data. The generated report or plot should identify which mode produced it. Project 22 uses a local continuation-ranking example and does not download HellaSwag; Project 23 audits controlled local prompts and does not measure bias in a trained model. Attention-head and hidden-state interventions use approximate patching or ablation measures, with details recorded in the generated outputs.
 
-## Resultados e reprodutibilidade
+## Reproducibility and data
 
-Os scripts não sobrescrevem o código-fonte e não fazem upload de dados. `--seed` controla as partes aleatórias do modo didático. Os arquivos produzidos ficam no diretório de saída e são ignorados pelo Git por padrão.
+Use `--seed` to control the randomized parts of the educational examples. The scripts do not overwrite source files or upload data. Generated results are written to the selected output directory and ignored by Git by default.
 
-## Créditos e escopo
+## Book attribution and scope
 
-Os temas e a sequência dos 50 projetos foram inspirados pelo livro de Mike X Cohen. As implementações, os exemplos de texto, o corpus e as visualizações deste repositório são independentes; alguns experimentos usam demonstrações didáticas menores em vez dos dados e das figuras do livro. Consulte o livro para o contexto conceitual completo; este código não substitui as explicações do autor.
+The project's themes and sequence are based on topics from Mike X. Cohen's [book](https://www.packtpub.com/en-ca/product/50-ml-projects-to-understand-llms-9781808082559). The code and examples here are independently written, and some experiments use smaller educational demonstrations instead of the book's datasets or figures. Consult the book for its full explanations; this repository does not replace or reproduce the author's material.
