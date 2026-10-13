@@ -12,11 +12,11 @@ for module in (tokenization, embeddings, logits, transformer, attention, mlp):
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Roda uma implementação didática original de um projeto.")
-    parser.add_argument("project", help="número do projeto (1–50) ou 'all'")
-    parser.add_argument("--output", default="results", help="pasta onde serão salvos CSVs, JSONs e gráficos")
-    parser.add_argument("--seed", type=int, default=42, help="semente para resultados reproduzíveis")
-    parser.add_argument("--model", default="toy", help="use toy offline ou informe um checkpoint GPT-2 compatível, como distilgpt2")
+    parser = argparse.ArgumentParser(description="Run one original educational project implementation.")
+    parser.add_argument("project", help="project number (1–50) or 'all'")
+    parser.add_argument("--output", default="results", help="directory for CSV, JSON, and plot outputs")
+    parser.add_argument("--seed", type=int, default=42, help="seed for reproducible results")
+    parser.add_argument("--model", default="toy", help="use toy mode offline or provide a compatible GPT-2 checkpoint, such as distilgpt2")
     args = parser.parse_args()
     ctx = Context(seed=args.seed, output=Path(args.output), model_name=args.model)
     if args.project.lower() == "all":
@@ -25,11 +25,11 @@ def main() -> None:
         try:
             selected = [int(args.project)]
         except ValueError as exc:
-            parser.error(f"projeto inválido: {args.project!r}")
+            parser.error(f"invalid project: {args.project!r}")
             raise exc
     for number in selected:
         if number not in PROJECTS:
-            parser.error(f"projeto {number} não existe; use um número de 1 a 50")
+            parser.error(f"project {number} does not exist; choose a number from 1 to 50")
         PROJECTS[number](ctx)
 
 
